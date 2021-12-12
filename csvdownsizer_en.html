@@ -1,0 +1,440 @@
+
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title>CSV Downsizer</title>
+<style>
+	input.query_word { width: 200px; }
+		 .num_of_files { width: 30px; }
+	div.header { width: 800px; height: 130px; border: 2px solid #00b200; border-radius: 10px; text-align: center;}
+	   .read_result { padding-left: 5em; }
+	   .search_result { padding-left: 1em;}
+	   .columns { padding-left: 5em; }
+	   .columns_result { padding-left: 5em; }
+	   .b { padding-left: 5em; display: none; }
+	   .footer { width: 800px; height: 50px; border: 2px solid #00b200; border-radius: 10px; text-align: center;}
+	p.title { font-size: x-large; margin-top: 10px; margin-bottom: 0px;}
+	 .disclaimer { padding-left: 1em; padding-right: 1em; font-size: x-small; text-align: left; }
+</style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6X4N897KT2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6X4N897KT2');
+</script>
+</head>
+
+
+<body>
+<!-- Header -->
+<div id="header" class="header"><p class="title">CSV Downsizer ver 0.85b</p>
+<p class="disclaimer">[DISCLAIMER]<br>This tool is a sample implimentation.<br/>
+	Note that our recommendations, report, and code samples being shared (“Samples”) are not Google products, and Google will not support such Samples.<br/>
+Samples are offered on as-is basis, and designed only to provide you with certain examples of how such code samples could be utilized. Google does not provide any representation and warranty in relation to Samples.
+By implementing any of Samples, you agree to solely assume all responsibility for any consequences that arise from such implementation.</p></div><br/><br/>
+
+<!-- Step 1. -->
+<b>Step 1.</b> Select a csv file from here → <button id="read_button">Select</button><br/>
+　　　（For a file which size is several hundred MB, it may take several minutes to read.）<br/>
+<div id="read_result" class="read_result"></div><br/><br/>
+
+<!-- Step 2. -->
+<b>Step 2.</b> Choose an operation<br/>
+
+<input type="radio" name="operation" value="A">Operation A: Find lines that contain <input type="text" id="query_word" class="query_word"> .
+<div id="search_result" class="search_result"></div><br/>
+
+<input type="radio" name="operation" value="B">Operation B: Split the CSV file into <input type="text" id="num_of_files" class="num_of_files"> files.（MAX: 30 files）<br/>
+<div id="b1"  name="b" class="b"><button id="save_button_1">Save 1st file</button><br/></div>
+<div id="b2"  name="b" class="b"><button id="save_button_2">Save 2nd file</button><br/></div>
+<div id="b3"  name="b" class="b"><button id="save_button_3">Save 3rd file</button><br/></div>
+<div id="b4"  name="b" class="b"><button id="save_button_4">Save 4th file</button><br/></div>
+<div id="b5"  name="b" class="b"><button id="save_button_5">Save 5th file</button><br/></div>
+<div id="b6"  name="b" class="b"><button id="save_button_6">Save 6th file</button><br/></div>
+<div id="b7"  name="b" class="b"><button id="save_button_7">Save 7th file</button><br/></div>
+<div id="b8"  name="b" class="b"><button id="save_button_8">Save 8th file</button><br/></div>
+<div id="b9"  name="b" class="b"><button id="save_button_9">Save 9th file</button><br/></div>
+<div id="b10" name="b" class="b"><button id="save_button_10">Save 10th file</button><br/></div>
+<div id="b11" name="b" class="b"><button id="save_button_11">Save 11th file</button><br/></div>
+<div id="b12" name="b" class="b"><button id="save_button_12">Save 12th file</button><br/></div>
+<div id="b13" name="b" class="b"><button id="save_button_13">Save 13th file</button><br/></div>
+<div id="b14" name="b" class="b"><button id="save_button_14">Save 14th file</button><br/></div>
+<div id="b15" name="b" class="b"><button id="save_button_15">Save 15th file</button><br/></div>
+<div id="b16" name="b" class="b"><button id="save_button_16">Save 16th file</button><br/></div>
+<div id="b17" name="b" class="b"><button id="save_button_17">Save 17th file</button><br/></div>
+<div id="b18" name="b" class="b"><button id="save_button_18">Save 18th file</button><br/></div>
+<div id="b19" name="b" class="b"><button id="save_button_19">Save 19th file</button><br/></div>
+<div id="b20" name="b" class="b"><button id="save_button_20">Save 20th file</button><br/></div>
+<div id="b21" name="b" class="b"><button id="save_button_21">Save 21st file</button><br/></div>
+<div id="b22" name="b" class="b"><button id="save_button_22">Save 22nd file</button><br/></div>
+<div id="b23" name="b" class="b"><button id="save_button_23">Save 23rd file</button><br/></div>
+<div id="b24" name="b" class="b"><button id="save_button_24">Save 24th file</button><br/></div>
+<div id="b25" name="b" class="b"><button id="save_button_25">Save 25th file</button><br/></div>
+<div id="b26" name="b" class="b"><button id="save_button_26">Save 26th file</button><br/></div>
+<div id="b27" name="b" class="b"><button id="save_button_27">Save 27th file</button><br/></div>
+<div id="b28" name="b" class="b"><button id="save_button_28">Save 28th file</button><br/></div>
+<div id="b29" name="b" class="b"><button id="save_button_29">Save 29th file</button><br/></div>
+<div id="b30" name="b" class="b"><button id="save_button_30">Save 30th file</button><br/></div><br/>
+
+<input type="radio" name="operation" value="C">Operation C: Save only selected columns.<br/>
+<div id="columns" class="columns"></div>
+<div id="columns_result" class="columns_result"></div><br/><br/>
+
+<!-- Step 3. -->
+<b>Step 3.</b> <button id="execute_button">GO!</button><br/><br/><br/><br/>
+
+<!-- Footer -->
+<div id="footer" class="footer">※ This tool can work with Chrome browther on Mac/Windows. ※</div>
+</body>
+
+
+<script>
+let bufferSize    = 100000;
+let hlParam       = getUrlParam('hl');
+let csv           = '';
+let colNames      = null;
+let readButton    = document.getElementById('read_button');
+let readResult    = document.getElementById('read_result');
+let queryBox      = document.getElementById('query_word');
+let searchResult  = document.getElementById('search_result');
+let numOfFilesBox = document.getElementById('num_of_files');
+let columns       = document.getElementById('columns');
+let columnsResult = document.getElementById('columns_result');
+let executeButton = document.getElementById('execute_button');
+let operations    = document.getElementsByName('operation');
+let saveButton0   = null;
+let saveButton1   = document.getElementById('save_button_1');
+let saveButton2   = document.getElementById('save_button_2');
+let saveButton3   = document.getElementById('save_button_3');
+let saveButton4   = document.getElementById('save_button_4');
+let saveButton5   = document.getElementById('save_button_5');
+let saveButton6   = document.getElementById('save_button_6');
+let saveButton7   = document.getElementById('save_button_7');
+let saveButton8   = document.getElementById('save_button_8');
+let saveButton9   = document.getElementById('save_button_9');
+let saveButton10  = document.getElementById('save_button_10');
+let saveButton11  = document.getElementById('save_button_11');
+let saveButton12  = document.getElementById('save_button_12');
+let saveButton13  = document.getElementById('save_button_13');
+let saveButton14  = document.getElementById('save_button_14');
+let saveButton15  = document.getElementById('save_button_15');
+let saveButton16  = document.getElementById('save_button_16');
+let saveButton17  = document.getElementById('save_button_17');
+let saveButton18  = document.getElementById('save_button_18');
+let saveButton19  = document.getElementById('save_button_19');
+let saveButton20  = document.getElementById('save_button_20');
+let saveButton21  = document.getElementById('save_button_21');
+let saveButton22  = document.getElementById('save_button_22');
+let saveButton23  = document.getElementById('save_button_23');
+let saveButton24  = document.getElementById('save_button_24');
+let saveButton25  = document.getElementById('save_button_25');
+let saveButton26  = document.getElementById('save_button_26');
+let saveButton27  = document.getElementById('save_button_27');
+let saveButton28  = document.getElementById('save_button_28');
+let saveButton29  = document.getElementById('save_button_29');
+let saveButton30  = document.getElementById('save_button_30');
+let fs            = null;
+
+
+/////////////////////////////////////////////////////
+// Reading a file
+//
+readButton.onclick = () => {
+	const readFileOptions = {
+	  types: [
+	    {
+	      description: "Text Files",
+	      accept: {
+	        "text/plain": [".csv"],
+	      },
+	    },
+	  ],
+	};
+
+	(async ()=> {
+		executeButtonActivate(false);
+  		try {
+  			const [handle] = await window.showOpenFilePicker(readFileOptions);
+			readResult.innerHTML = '... processing ...';
+			queryBox.value = '';
+			numOfFilesBox.value = '';
+			columns.innerHTML = '';
+		 	await sleep(100);
+			const file = await handle.getFile();
+			csv = await file.text();
+			let topLines = csv.match(/^([^\n]*\n){0,100}/)[0];
+			readResult.innerHTML = 
+				'→ File『' + handle.name + '』was loaded.<br/>' +
+				'Preview of the file（First 100 lines）<br/>' +
+				'<textarea class="preview" name="preview" cols="83" rows="5" readonly>' + topLines + '</textarea>';
+
+			if (csv.match(/[^\n]+\n$/) == null) {
+				csv += '\n';
+			}
+			let firstLine = csv.match(/^[^\n]*\n/)[0].replace(/\n/g,'');
+			colNames      = split4csv(firstLine);
+			let t         = '';
+			for (let i=0; i<colNames.length; i++) {
+				t = t + '<input type="checkbox" name="column_check" value="'+i+'">'+colNames[i]+'<br/>\n';
+			}
+			columns.innerHTML = t;
+		} finally {
+			executeButtonActivate(true);
+		}
+	})();
+}
+
+
+/////////////////////////////////////////////////////
+// Executing an operation
+//
+executeButton.onclick = async () => {
+ 	executeButtonActivate(false);
+ 	await sleep(100);
+ 	try {
+		if (operations.item(0).checked) { 
+			searchResult.innerHTML = '... searching ...';
+		 	await sleep(100);
+			operationA(); 
+		}
+		if (operations.item(1).checked) { operationB(); }
+		if (operations.item(2).checked) { operationC(); }
+ 	} finally {
+ 		executeButtonActivate(true);
+ 	}
+}
+
+// Operation A //////////////////////////////////////
+
+function operationA() {
+	let firstLine = csv.match(/^[^\n]*\n/)[0];
+	let query  = queryBox.value;
+	regex  = new RegExp('[^\n]*'+query+'[^\n]*\n','g');
+	let resultText = '';
+
+ 	let crumb = '';
+ 	for (let i=0; i<csv.length; i=i+bufferSize) {
+ 		csvSub = crumb + csv.substr(i,bufferSize);
+ 		if (i+bufferSize < csv.length) {
+ 			crumb = csvSub.match(/[^\n]*$/)[0];
+ 			csvSub = csvSub.substr(0,csvSub.length-crumb.length);
+		}
+ 		results = csvSub.match(regex);
+		if (results) {
+			for (j=0; j<results.length; j++) {
+				resultText += results[j];
+			}
+		}
+ 	}
+
+	let resultHtml = '';
+	if (resultText == '') { 
+		resultHtml = 'There was no matched line.'; 
+	} else {
+		if (resultText.match(/^[^\n]*\n/)[0] != firstLine) {
+			resultText = firstLine+resultText;
+		}
+		let topLines = resultText.match(/^([^\n]*\n){0,100}/)[0];
+		resultHtml = 
+			'Preview of the search result for a query <input type="text" value="'+query+'" readonly>（Header+first 100 lines）<br/>' +
+			'<textarea name="result_area" cols="90" rows="10" readonly>'+topLines+'</textarea><br/>' +
+		    '<button id="save_button_0">Save The Result</button>';
+	}
+	searchResult.innerHTML = resultHtml;
+	saveButton0 = document.getElementById('save_button_0');
+	saveButton0.onclick = () => { saveAsFile(resultText) }
+}
+
+// Operation B //////////////////////////////////////
+function operationB() {
+	let numOfFiles = Number(numOfFilesBox.value);
+	if (isNaN(numOfFiles) || numOfFiles>30 || numOfFiles<1) {
+		numOfFilesBox.select();
+		return -1;
+	}
+	let results = csv.split('\n');
+
+	let t_split    = [];
+	let t          = '';
+	let head       = '';
+	let count      = 0;
+	let countLimit = Math.ceil(results.length/numOfFiles);
+	if (countLimit == 0) { countLimit = 1 };
+	for (let i=0; i<results.length; i++) {
+		if (i==0) {
+			head = results[0];
+		} else {
+			t += results[i] + '\n';
+		}
+		count += 1;
+		if (count > countLimit) {
+			t_split.push(head+'\n' + t);
+			t     = '';
+			count = 0;
+		}
+	}
+	t_split.push(head+'\n' + t);
+
+	for (let n=1; n<t_split.length+1; n++) {
+		document.getElementById('b'+n).style.display ='block';
+		if (n==1)  { saveButton1.onclick  = () => { saveAsFile(t_split[n-1]) }};
+		if (n==2)  { saveButton2.onclick  = () => { saveAsFile(t_split[n-1]) }};
+		if (n==3)  { saveButton3.onclick  = () => { saveAsFile(t_split[n-1]) }};
+		if (n==4)  { saveButton4.onclick  = () => { saveAsFile(t_split[n-1]) }};
+		if (n==5)  { saveButton5.onclick  = () => { saveAsFile(t_split[n-1]) }};
+		if (n==6)  { saveButton6.onclick  = () => { saveAsFile(t_split[n-1]) }};
+		if (n==7)  { saveButton7.onclick  = () => { saveAsFile(t_split[n-1]) }};
+		if (n==8)  { saveButton8.onclick  = () => { saveAsFile(t_split[n-1]) }};
+		if (n==9)  { saveButton9.onclick  = () => { saveAsFile(t_split[n-1]) }};
+		if (n==10) { saveButton10.onclick = () => { saveAsFile(t_split[n-1]) }};
+		if (n==11) { saveButton11.onclick = () => { saveAsFile(t_split[n-1]) }};
+		if (n==12) { saveButton12.onclick = () => { saveAsFile(t_split[n-1]) }};
+		if (n==13) { saveButton13.onclick = () => { saveAsFile(t_split[n-1]) }};
+		if (n==14) { saveButton14.onclick = () => { saveAsFile(t_split[n-1]) }};
+		if (n==15) { saveButton15.onclick = () => { saveAsFile(t_split[n-1]) }};
+		if (n==16) { saveButton16.onclick = () => { saveAsFile(t_split[n-1]) }};
+		if (n==17) { saveButton17.onclick = () => { saveAsFile(t_split[n-1]) }};
+		if (n==18) { saveButton18.onclick = () => { saveAsFile(t_split[n-1]) }};
+		if (n==19) { saveButton19.onclick = () => { saveAsFile(t_split[n-1]) }};
+		if (n==20) { saveButton20.onclick = () => { saveAsFile(t_split[n-1]) }};
+		if (n==21) { saveButton21.onclick = () => { saveAsFile(t_split[n-1]) }};
+		if (n==22) { saveButton22.onclick = () => { saveAsFile(t_split[n-1]) }};
+		if (n==23) { saveButton23.onclick = () => { saveAsFile(t_split[n-1]) }};
+		if (n==24) { saveButton24.onclick = () => { saveAsFile(t_split[n-1]) }};
+		if (n==25) { saveButton25.onclick = () => { saveAsFile(t_split[n-1]) }};
+		if (n==26) { saveButton26.onclick = () => { saveAsFile(t_split[n-1]) }};
+		if (n==27) { saveButton27.onclick = () => { saveAsFile(t_split[n-1]) }};
+		if (n==28) { saveButton28.onclick = () => { saveAsFile(t_split[n-1]) }};
+		if (n==29) { saveButton29.onclick = () => { saveAsFile(t_split[n-1]) }};
+		if (n==30) { saveButton30.onclick = () => { saveAsFile(t_split[n-1]) }};
+	}
+}
+
+// Operation C //////////////////////////////////////
+function operationC() {
+	let checkedIndex = [];
+	columnCheck = document.getElementsByName('column_check');
+	for (let i=0; i<columnCheck.length; i++) {
+		if (columnCheck[i].checked) {
+			checkedIndex.push(true);
+		} else {
+			checkedIndex.push(false);
+		}
+	}
+
+	let results = csv.split('\n');
+	for (let i=0; i<results.length; i++) {
+		let a = split4csv(results[i]);
+		let t = [];
+		for (let j=0; j<checkedIndex.length; j++) {
+			if (a.length < checkedIndex.length) { a.push(''); }
+			if (checkedIndex[j]) {
+				t.push(a[j]);
+			}
+		}
+		results[i] = t.join(',');
+	}
+	t = results.join('\n');
+	columnsResult.innerHTML =
+		'　　↓<br/>' +
+		'Done.<br/>' +
+		'<button id="save_button_x">Save The Result</button>';
+	saveButtonX = document.getElementById('save_button_x');
+	saveButtonX.onclick = () => { saveAsFile(t) }
+}
+
+
+/////////////////////////////////////////////////////
+// Writing a file
+//
+async function writeFile(fileHandle, contents) {
+	const writable = await fileHandle.createWritable();
+	await writable.write(contents);
+	await writable.close();
+}
+
+function saveAsFile(txt) {
+	const saveFileOptions = {
+	  types: [
+	    {
+	      description: "Text Files",
+	      accept: {
+	        "text/plain": [".csv"],
+	      },
+	    },
+	  ],
+	};
+	(async ()=> {
+  		const handle = await window.showSaveFilePicker(saveFileOptions);
+  		await writeFile(handle, txt);
+	})();
+}
+
+
+/////////////////////////////////////////////////////
+// misc.
+//
+queryBox.onclick       = () => { checkOperation(0); }
+queryBox.onchange      = () => { checkOperation(0); }
+numOfFilesBox.onclick  = () => { checkOperation(1); }
+numOfFilesBox.onchange = () => { checkOperation(1); }
+columns.onchange       = () => { checkOperation(2); }
+
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+function checkOperation(idx) {
+	operations.item(idx).checked = true;
+}
+
+function executeButtonActivate(flag) {
+	if (flag) {
+		executeButton.innerHTML = 'GO!';
+		executeButton.disabled  = false;
+	} else {
+	 	executeButton.innerHTML = 'processing..';
+		executeButton.disabled  = true;
+		searchResult.innerHTML  = '';
+		columnsResult.innerHTML = '';
+		let bs = document.getElementsByName('b');
+		bs.forEach(element => element.style.display = 'none');
+	}
+}
+
+function split4csv(csvText) {
+	csvText = csvText.replace(/\n/g,'{{{￥n}}}');
+	let matches = csvText.match(/"[^"]*,[^"]*"/g);
+	if (matches != null) {
+		for (let i=0; i<matches.length; i++) {
+			let chunk = matches[i].replace(/,/g,'{{{￥comma}}}');
+			csvText = csvText.replace(matches[i],chunk);
+		}
+	}
+	let a = csvText.split(',');
+	for (let i=0; i<a.length; i++) {
+		a[i] = a[i].replace(/\{\{\{￥comma\}\}\}/g,',').replace(/\{\{\{￥n\}\}\}/g,'\n');
+	}
+	return a;
+}
+
+function getUrlParam(name) {
+	let param = location.search;
+	param = param.replace(/^\?/,'&');
+	let regex = new RegExp('&'+name+'=[^&]*');
+	let result = param.match(regex);
+	if (result) {
+		let value = result[0].substr(name.length+2);
+		return value;
+	} else {
+		return false;
+	}
+}
+</script>
+
+</html>
+
+
+
