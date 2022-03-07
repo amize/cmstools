@@ -1,4 +1,3 @@
-
 <html>
 
 <head>
@@ -406,7 +405,8 @@ function executeButtonActivate(flag) {
 
 function split4csv(csvText) {
 	csvText = csvText.replace(/\n/g,'{{{￥n}}}');
-	let matches = csvText.match(/"[^"]*,[^"]*"/g);
+	csvText = csvText.replace(/""/g,'{{{￥dq}}}');
+	let matches = csvText.match(/"[^"]+"/g);
 	if (matches != null) {
 		for (let i=0; i<matches.length; i++) {
 			let chunk = matches[i].replace(/,/g,'{{{￥comma}}}');
