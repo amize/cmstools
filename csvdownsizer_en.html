@@ -415,7 +415,7 @@ function split4csv(csvText) {
 	}
 	let a = csvText.split(',');
 	for (let i=0; i<a.length; i++) {
-		a[i] = a[i].replace(/\{\{\{￥comma\}\}\}/g,',').replace(/\{\{\{￥n\}\}\}/g,'\n');
+		a[i] = a[i].replace(/\{\{\{￥comma\}\}\}/g,',').replace(/\{\{\{￥dq\}\}\}/g,'""').replace(/\{\{\{￥n\}\}\}/g,'\n');
 	}
 	return a;
 }
